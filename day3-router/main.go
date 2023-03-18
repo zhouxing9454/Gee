@@ -20,7 +20,7 @@ func main() {
 		context.String(http.StatusOK, "hello %s,you're at %s\n", context.Param("name"), context.Path)
 	})
 
-	r.GET("/hello/*filepath", func(context *gee.Context) {
+	r.GET("/assets/*filepath", func(context *gee.Context) {
 		context.JSON(http.StatusOK, gee.H{
 			"filepath": context.Param("filepath"),
 		})
